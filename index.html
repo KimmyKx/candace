@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day My Sweet Girlfriend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 0;">Happy Valentine's Day <span style="color: rgb(233, 99, 99);">Candace!</span></h1>
+        <h1 style="margin: 0; padding: 0;">❤️</h1>
+        <div class="content">
+            <img src="images/file_manager.png" width="500" id="filemanager"></img>
+            <img src="images/cat.gif" width="250" id="cat">
+            <span id="typings"></span>
+            <button id="opencard" style="outline: none;"></button>
+        </div>
+        <div class="card" style="display: none;">
+            <div class="card-image">
+                <p id="message"></p>
+            </div>
+        </div>
+        <audio id="background-music" autoplay loop>
+            <source src="./lovers.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+    </div>
+    <script>
+        const messages = [
+            "> Happy Valentine's Day, My Sweet Girlfriend! 💖",
+            "> It's Our First Valentine's!. ❤️",
+        ];
+
+        let currentMessage = 0;
+        const typingSpeed = 50; // milliseconds
+        const messageElement = document.getElementById('typings');
+
+        function typeMessage(message, index = 0) {
+            if (index < message.length) {
+                messageElement.innerHTML += message.charAt(index);
+                setTimeout(() => typeMessage(message, index + 1), typingSpeed);
+            } else {
+                setTimeout(() => {
+                    messageElement.innerHTML += '<br><br>';
+                    currentMessage++;
+                    if (currentMessage < messages.length) {
+                        typeMessage(messages[currentMessage]);
+                    }
+                }, 1500);
+            }
+        }
+        setTimeout(() => {
+            typeMessage(messages[currentMessage]);
+        }, 2000);
+        const openCardButton = document.getElementById('opencard');
+        openCardButton.onclick = () => {
+            openCard();
+        }
+        function openCard() {
+            const cardImage = document.querySelector('.card-image');
+            cardImage.style.animation = 'heightUp 2s forwards';
+            const card = document.querySelector('.card');
+            card.style.display = 'block';
+            setTimeout(() => {
+                typeMessage2("To my dearest Candace,\n\nOn this special day, I want to remind you how much you mean to me. Your smile lights up my world, and your love fills my heart with joy. I am so grateful to have you in my life.\n\nHappy Valentine's Day, my love! Here's to many more beautiful moments together.\n\nWith all my love,\nYour BF, Kimmy.");
+            }, 2500);
+        }
+        const message = document.getElementById('message');
+        function typeMessage2(msg, index = 0) {
+            if(index < msg.length) {
+                message.innerHTML += msg.charAt(index);
+                setTimeout(() => typeMessage2(msg, index + 1), typingSpeed);
+            }
+        }
+    </script>
+</body>
+</html>
