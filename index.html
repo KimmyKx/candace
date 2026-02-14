@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Valentine's Day My Sweet Girlfriend</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
 <body>
     <div class="container">
+        <div id="image-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                <li class="splide__slide"><img src="carousel/image-1.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-2.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-3.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-4.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-5.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-6.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-7.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-8.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-9.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-10.jpeg" width="300"></li>
+                <li class="splide__slide"><img src="carousel/image-11.jpeg" width="300"></li>
+                </ul>
+            </div>
+        </div>
         <h1 style="margin-bottom: 0;">Happy Valentine's Day <span style="color: rgb(233, 99, 99);">Candace!</span></h1>
         <h1 style="margin: 0; padding: 0;">❤️</h1>
         <div class="content">
@@ -27,7 +45,23 @@
         </audio>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#image-slider', {
+            type: 'loop',
+            drag: false,
+            arrows: false,
+            pagination: false,
+            perPage: 5,
+            gap: "5px",
+            autoScroll: {
+            speed: 3, // smaller = slower
+            },
+        }).mount(window.splide.Extensions);
+        });
         const messages = [
             "> Happy Valentine's Day, My Sweet Girlfriend! 💖",
             "> It's Our First Valentine's!. ❤️",

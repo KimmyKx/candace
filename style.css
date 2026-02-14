@@ -4,6 +4,9 @@ body {
     background-color: #F0B3B4;
     overflow: hidden;
     font-family: minecraft;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @font-face {
   font-family: 'minecraft'; 
@@ -30,6 +33,21 @@ h1 {
     transform:  scale(.25);
     animation: pop 1s ease-out forwards;
 }
+
+.splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0;
+  width: 300px;
+}
+
+.splide__slide img {
+  width: 200px;   /* change this */
+  height: auto;
+}
+
 
 .content {
     position: relative;
